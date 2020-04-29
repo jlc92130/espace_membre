@@ -1,0 +1,87 @@
+
+@media all and (max-width: 600px) { //WHEN SCREEN SIZE <600  THEN LOGO FULL SCREEN
+    header img { width: 100%; }
+    }
+    html,body {
+      font-family: Arial, Helvetica, sans-serif;
+      height: 100%;
+    }
+  $theme-colors: (
+    "espace_membre":#d8ebec,
+  );
+
+  $whiteColor: white;
+    
+  .grey {
+      color: #777;
+  }
+  .bandeau {
+    height: 110px;
+    background-color:#336e7b;
+    color: $whiteColor;
+  }
+
+  #champs {
+    display: block;
+  }
+  #ht {
+    height: auto !important;
+    height: 100vh;    
+  }
+
+  #form {
+    text-align: center;
+  }
+  #button {
+    text-align: center;
+    margin-top: 10px;
+  }
+  #login-body {
+   
+      margin: auto;
+      background-color: rgba(0,0,0,.75);
+      color: $whiteColor;
+      border-radius: 5px;
+      
+       
+      
+  }
+  
+  * { 
+    box-sizing: border-box;
+  }
+  form {
+    text-align: left;
+        
+  }
+  small {
+    display: block;
+  }
+  input {
+    border: 1px solid black;
+    padding: 3px;
+    margin-left: 10px;
+  }
+  a {
+    text-decoration: none;
+     
+  }
+  button {
+    background-color: teal;
+    color: $whiteColor;
+    border: 0;
+    cursor: pointer;
+  }
+
+  
+  footer {
+    
+    
+    a {
+      color:#00b5cc;
+    }
+    p:hover {
+      text-decoration: underline;
+    }
+  }
+  @import "node_modules/bootstrap/scss/bootstrap";
