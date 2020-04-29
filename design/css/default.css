@@ -13,6 +13,9 @@ html, body {
   background-color: #336e7b;
   color: white; }
 
+.const {
+  background-color: #336e7b; }
+
 #champs {
   display: block; }
 

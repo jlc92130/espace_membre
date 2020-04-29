@@ -81,9 +81,9 @@ include('src/header.php');
             </button>
             
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Dossier d'inscription</a>
-              <a class="dropdown-item" href="#">Règlement </a>
-              <a class="dropdown-item" href="#">Documents concernant le client</a>
+              <a class="dropdown-item" href="dossier_inscription.php">Dossier d'inscription</a>
+              <a class="dropdown-item" href="reglement.php">Règlement </a>
+              <a class="dropdown-item" href="documents.php">Documents concernant le client</a>
             </div>
           </div>
     </div>

@@ -78,11 +78,15 @@
 				<script type="text/javascript">$('#inscription_form').modal('show')</script>
 			<?php		
 				}
-
+								
 				if (!empty($already_email)) {
-					echo '<div class="text-warning">'.$already_email.'</div>';
-
 			?>
+				<div class="already_email">
+			<?php
+				echo '<div class="text-warning">'.$already_email.'</div>';
+			?>
+				</div>
+				
 				<script type="text/javascript">$('#inscription_form').modal('show')</script>
 			<?php		
 				}

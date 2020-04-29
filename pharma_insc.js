@@ -13,6 +13,7 @@ form_insc.addEventListener('submit',(e) => {
    var champsVide = document.getElementById('champsVide');
    var identique  = document.getElementById("identique");
    var email_er   = document.getElementById("email_er");
+   var obj = document.getElementsByClassName("already_email")[0];
 
   var passwordValue = password.value;
   var emailValue = email.value;
@@ -22,6 +23,8 @@ form_insc.addEventListener('submit',(e) => {
   if (emailValue == "" || passwordValue == "" || password_twoValue == "") {
     
     champsVide.style.display = 'inline';
+    email_er.style.display = 'none'; 
+    identique.style.display  = 'none';
     //champsVide(emailValue,passwordValue,password_twoValue);
   } else if ( !emailValue.match(mailformat)) {
       champsVide.style.display = 'none';
@@ -33,11 +36,12 @@ form_insc.addEventListener('submit',(e) => {
     identique.style.display  = 'inline';
     
   } else {
-    
     form_insc.submit();
   }
- 
+    
 })
+
+
  
 
  
