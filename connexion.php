@@ -25,15 +25,22 @@
 		
 		if ($res['password'] != $password) {
 			$error_conn = "Votre password est erroné";
-
+			 
 		} else {
+			//header('location: index.php?success=1');
+			//$_SESSION['connect'] = 1;
+			//$_SESSION['email']   = $res['email'];
 			//DISPLAY CONNEXION IN GREEN
-			?>
+			
+			//exit();			
+			?>			
 			<script>
 					var connexion = document.getElementById('conn');
+					connexion.className = "nav-link";
 					connexion.style.color = "green";
 			</script>
 			<?php
+			
 		}
 	}
 
@@ -67,7 +74,9 @@
 						<script>$('#connexion').modal('show')</script>
 					<?php
 					}
-					
+					if (isset($_GET['success'])) {
+						echo '<div>Vous etes bien connéecté</div>';
+					}
 					if (isset($email_unknown)) {
 						echo '<div class="text-warning">'.$email_unknown.'</div>';
 						?>
