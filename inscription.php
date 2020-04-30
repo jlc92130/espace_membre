@@ -46,6 +46,9 @@
 		} 
 
 ?>
+
+ <?php // ob_start();   We have to use that function to "desactivate" the HTML before my header function in the connexion file to allowed the redirection ?>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,6 +66,7 @@
 		<div id="login-body">
 			<div id="form">
 			<?php
+
 				if ((!empty($fill_missing)) && (!empty($_POST['inscription']))) {
 			?>
 					<script type="text/javascript">$('#inscription_form').modal('show')</script>
@@ -90,10 +94,7 @@
 				<script type="text/javascript">$('#inscription_form').modal('show')</script>
 			<?php		
 				}
-				
-				
-			
-	   		?>
+			?>
 				<form id="inscription" method="post" action=""  name="inscription" >
 					<small id="champsVide" class='text-warning text-center'>Tout les champs dv etre remplis</small>
 					<small id="email_er" class='text-warning text-center'>Vous dv saisir un email valide</small>
@@ -128,3 +129,4 @@
 <script type="text/javascript"  src="pharma_insc.js"></script>
 </body>
 </html>
+ 

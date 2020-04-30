@@ -1,4 +1,5 @@
 <?php
+// $content = ob_get_clean();  The end of the html of the incription php file
  if (!empty($_POST['email_conn']) && !empty($_POST['password_conn'])) {
 	 // IMPORT CONNECTION FILE FOR THE CONNECTION WITH DATA BASE
 	 require('src/connection_bdd.php'); 
@@ -27,19 +28,16 @@
 			$error_conn = "Votre password est erroné";
 			 
 		} else {
-			//header('location: index.php?success=1');
-			//$_SESSION['connect'] = 1;
-			//$_SESSION['email']   = $res['email'];
-			//DISPLAY CONNEXION IN GREEN
-			
-			//exit();			
-			?>			
+			?>	
+			<!-- DISPLAY CONNEXION IN GREEN		-->
 			<script>
 					var connexion = document.getElementById('conn');
 					connexion.className = "nav-link";
 					connexion.style.color = "green";
 			</script>
 			<?php
+			//header('location: index.php?success=1');  I will not do redirection
+			//exit();	
 			
 		}
 	}
@@ -47,7 +45,7 @@
 
 }
   	
-	
+// echo $content;	this was for the redirection to block HTML before my header function() 
 
 ?>
 
@@ -65,7 +63,7 @@
 <body>
 	<section>
 		<div id="login-body">
-			
+			<!-- AFFICHAGE DES MESSAGES D ERREURS PHP-->
 			<div id="form">		
 					<?php
 					if (isset($error_conn_email)) {
@@ -74,9 +72,10 @@
 						<script>$('#connexion').modal('show')</script>
 					<?php
 					}
-					if (isset($_GET['success'])) {
-						echo '<div>Vous etes bien connéecté</div>';
-					}
+					/* if (isset($_GET['success'])) {
+						echo '<div>Vous etes bien connecté</div>';
+						
+					} */
 					if (isset($email_unknown)) {
 						echo '<div class="text-warning">'.$email_unknown.'</div>';
 						?>
