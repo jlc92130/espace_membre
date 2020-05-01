@@ -41,6 +41,9 @@ include('src/header.php');
           <li>
             <a id="conn" data-toggle='modal' data-target='#connexion' href='#connexion' class="nav-link text-white" >connexion</a>
           </li>
+          <li>
+            <a id="deconn" href='deconnexion.php' class="nav-link text-white" >deconnexion</a>
+          </li>
         </ul>
       </div>
     </div>

@@ -1,7 +1,5 @@
 <?php
 
-
-
 // $content = ob_get_clean();  The end of the html of the incription php file
  if (!empty($_POST['email_conn']) && !empty($_POST['password_conn'])) {
 	 // IMPORT CONNECTION FILE FOR THE CONNECTION WITH DATA BASE
