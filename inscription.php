@@ -3,7 +3,6 @@
 	//ENVOI DU FORMULAIRE
 
 	
-	
 
 	if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_two'])){
 		// IMPORT CONNECTION FILE FOR THE CONNECTION WITH DATA BASE

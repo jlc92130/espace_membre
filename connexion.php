@@ -1,4 +1,7 @@
 <?php
+
+
+
 // $content = ob_get_clean();  The end of the html of the incription php file
  if (!empty($_POST['email_conn']) && !empty($_POST['password_conn'])) {
 	 // IMPORT CONNECTION FILE FOR THE CONNECTION WITH DATA BASE
@@ -28,22 +31,27 @@
 			$error_conn = "Votre password est erroné";
 			 
 		} else {
+			$_SESSION['connect'] = 1;
+			$_SESSION['email'] = $res['email'];
+			
 			?>	
 			<!-- DISPLAY CONNEXION IN GREEN		-->
+			
 			<script>
 					var connexion = document.getElementById('conn');
 					connexion.className = "nav-link";
 					connexion.style.color = "green";
 			</script>
 			<?php
-			//header('location: index.php?success=1');  I will not do redirection
+			}
+			//header('location: index.php?success=1');  I decided not use  redirection
 			//exit();	
 			
 		}
 	}
 
 
-}
+
   	
 // echo $content;	this was for the redirection to block HTML before my header function() 
 
