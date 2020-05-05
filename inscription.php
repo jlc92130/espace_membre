@@ -1,4 +1,20 @@
 <?php
+
+// IF WE ARE ALREADY CONNECTED THEN REDIRECT TO HOME PAGE
+if (isset($_SESSION['connect'])) {
+	?>
+	<script>
+	let inscription = document.getElementById('inscription');
+		inscription.addEventListener('click',closeModal);
+		function closeModal() {
+			alert('Vous êtes déja inscit!');
+			 
+		}
+				
+	</script>
+	<?php
+	
+}
 	 
 	//ENVOI DU FORMULAIRE
 
@@ -45,7 +61,7 @@
 
 ?>
 
- <?php // ob_start();   We have to use that function to "desactivate" the HTML before my header function in the connexion file to allowed the redirection ?>
+ <?php  ob_start();  // We have to use that function to "desactivate" the HTML before my header function in the connexion file to allowed the redirection ?>
 	
 <!DOCTYPE html>
 <html>
@@ -93,7 +109,7 @@
 			<?php		
 				}
 			?>
-				<form id="inscription" method="post" action=""  name="inscription" >
+				<form id="inscription_form" method="post" action=""  name="inscription" >
 					<small id="champsVide" class='text-warning text-center'>Tout les champs dv etre remplis</small>
 					<small id="email_er" class='text-warning text-center'>Vous dv saisir un email valide</small>
 					<small id="identique" class="text-warning text-center">Vos mots de passe doivent être identiques et faire au moins 6 caracteres</small>

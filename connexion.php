@@ -1,5 +1,20 @@
 <?php
+if (isset($_SESSION['connect'])) {
+	?>
+		<script>
+		let connexion = document.getElementById('conn');
+			connexion.addEventListener('click',closeModal);
+			function closeModal() {
+				alert('Vous êtes déja connecté !');
+				
+			}
+					
+		</script>
+		<?php
+		
+	}
 
+ 
 // $content = ob_get_clean();  The end of the html of the incription php file
  if (!empty($_POST['email_conn']) && !empty($_POST['password_conn'])) {
 	 // IMPORT CONNECTION FILE FOR THE CONNECTION WITH DATA BASE
@@ -36,7 +51,7 @@
 			<!-- DISPLAY CONNEXION IN GREEN		-->
 			
 			<script>
-					var connexion = document.getElementById('conn');
+					let connexion = document.getElementById('conn');
 					connexion.className = "nav-link";
 					connexion.style.color = "green";
 			</script>
@@ -55,7 +70,7 @@
 
 ?>
 
-
+<?php  ob_start();  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -113,7 +128,7 @@
 
 					?>
 				
-				<form id="connexion" name="connexion" method="post" action="">
+				<form id="connexion_form" name="connexion" method="post" action="">
 					<small id="champs" ></small>
 					<input id="email_conn" type="text" name="email_conn" placeholder="Votre adresse email"   />
                     <input id="password_conn" type="password" name="password_conn" placeholder="Mot de passe"  />

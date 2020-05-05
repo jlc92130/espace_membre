@@ -1,5 +1,5 @@
 
-var form_insc = document.forms.inscription;
+var form_insc = document.forms.inscription_form;
 champsVide.style.display = 'none';
 email_er.style.display   = 'none';
 identique.style.display  = 'none';

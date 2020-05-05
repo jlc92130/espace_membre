@@ -6,8 +6,7 @@ $(function () {
 var password     =  document.getElementById('password');
 var password_two =  document.getElementById('password_two');
 var champsVide   =  document.getElementById('champsVide');
-var form_conn    =  document.forms.connexion;
-var inscription  =  document.getElementById('inscription');
+var form_conn    =  document.forms.connexion_form;
 var e_conn       =  document.querySelector("input[name='email_conn']")
 var small        =  document.createElement('small');
 
