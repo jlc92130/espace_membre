@@ -8,10 +8,7 @@ if (isset($_SESSION['connect'])) {
 		inscription.addEventListener('click',closeModal);
 		function closeModal() {
 			alert('Vous êtes déja inscit!!');
-			$('inscription_form').modal('hide');
 		}
-		
-				
 	</script>
 	<?php
 	
@@ -19,10 +16,10 @@ if (isset($_SESSION['connect'])) {
 	 
 	//ENVOI DU FORMULAIRE
 
-
+	require('src/connection_bdd.php'); 
 	if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_two'])){
 		// IMPORT CONNECTION FILE FOR THE CONNECTION WITH DATA BASE
-		require('src/connection_bdd.php'); 
+		
 		$email 		  = htmlspecialchars($_POST['email']);
 		$password     = htmlspecialchars($_POST['password']);
 		$password_two = htmlspecialchars($_POST['password_two']);
@@ -48,18 +45,18 @@ if (isset($_SESSION['connect'])) {
 					// SEND IN DBB
 					$req = $bdd->prepare("INSERT INTO user(email,password,secret) VALUES(?,?,?)");
 					$req->execute(array($email,$password,$secret));
-					
+					 
 				}
 		}	
 		else {
 				$error = "Vos mots de passe doivent être identiques";
 			}
 }
-	else {
+	else { 
 		$fill_missing = "Vous devez remplir tout les champs";
-		
-		} 
+		}
 
+	
 ?>
 
  <?php  ob_start();  // We have to use that function to "desactivate" the HTML before my header function in the connexion file to allowed the redirection ?>

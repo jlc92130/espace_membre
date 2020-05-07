@@ -35,10 +35,22 @@ include('src/header.php');
           <li class="nav-item">
             <a class="nav-link text-white">Shampoing</a>
           </li>
+          <?php
+          if (isset($_SESSION['connect'])) {
+          ?>
+          <li class="nav-item">
+            <a id="inscription" href='#' class="nav-link text-white">inscription</a>
+          </li>
+          <?php
+          }
+          else {
+          ?>
           <li class="nav-item">
             <a id="inscription" data-toggle='modal' data-target='#inscription_form' href='#inscription_form' class="nav-link text-white">inscription</a>
           </li>
           <?php
+          }
+          
           if (isset($_SESSION['connect'])) {
             ?>
             <li>

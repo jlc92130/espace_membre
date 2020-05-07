@@ -9,7 +9,6 @@ if (isset($_SESSION['connect'])) {
 			}		
 		let connexion = document.getElementById('conn');
 			connexion.addEventListener('click',modalFerm);
-			console.log('tetet');
 		</script>
 	
 	<?php
