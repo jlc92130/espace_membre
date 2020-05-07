@@ -1,7 +1,7 @@
 <?php
  session_start();
+ include('connexion_php_verif.php');
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,9 +38,22 @@ include('src/header.php');
           <li class="nav-item">
             <a id="inscription" data-toggle='modal' data-target='#inscription_form' href='#inscription_form' class="nav-link text-white">inscription</a>
           </li>
+          <?php
+          if (isset($_SESSION['connect'])) {
+            ?>
+            <li>
+            <a id="conn"   href='#' class="nav-link text-white" >connexion</a>
+          </li>
+          <?php
+          } 
+          else {
+          ?>
           <li>
             <a id="conn" data-toggle='modal' data-target='#connexion' href='#connexion' class="nav-link text-white" >connexion</a>
           </li>
+          <?php 
+          }
+          ?>
           <li>
             <a id="deconn" href='deconnexion.php' class="nav-link text-white" >deconnexion</a>
           </li>
@@ -199,9 +212,9 @@ include('src/header.php');
   if (isset($_SESSION['connect'])) {
   ?>
 <script>
-					var connexion = document.getElementById('conn');
-					connexion.className = "nav-link";
-					connexion.style.color = "green";
+					var connex = document.getElementById('conn');
+					connex.className = "nav-link";
+					connex.style.color = "green";
 </script>
 <?php } ?>
 

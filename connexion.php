@@ -1,20 +1,23 @@
 <?php
+
 if (isset($_SESSION['connect'])) {
 	?>
 		<script>
-		let connexion = document.getElementById('conn');
-			connexion.addEventListener('click',closeModal);
-			function closeModal() {
+		function modalFerm() {
 				alert('Vous êtes déja connecté !');
-				
-			}
-					
-		</script>
-		<?php
-		
-	}
 
- 
+			}		
+		let connexion = document.getElementById('conn');
+			connexion.addEventListener('click',modalFerm);
+			console.log('tetet');
+		</script>
+	
+	<?php
+	
+}
+?>
+
+ <?php
 // $content = ob_get_clean();  The end of the html of the incription php file
  if (!empty($_POST['email_conn']) && !empty($_POST['password_conn'])) {
 	 // IMPORT CONNECTION FILE FOR THE CONNECTION WITH DATA BASE
@@ -45,17 +48,7 @@ if (isset($_SESSION['connect'])) {
 			 
 		} else {
 			$_SESSION['connect'] = 1;
-			$_SESSION['email'] = $res['email'];
-			
-			?>	
-			<!-- DISPLAY CONNEXION IN GREEN		-->
-			
-			<script>
-					let connexion = document.getElementById('conn');
-					connexion.className = "nav-link";
-					connexion.style.color = "green";
-			</script>
-			<?php
+			 			
 			}
 			//header('location: index.php?success=1');  I decided not use  redirection
 			//exit();	
@@ -87,6 +80,7 @@ if (isset($_SESSION['connect'])) {
 			<!-- AFFICHAGE DES MESSAGES D ERREURS PHP-->
 			<div id="form">		
 					<?php
+					
 					if (isset($error_conn_email)) {
 						echo '<div class="text-warning">'.$error_conn_email.'</div>';
 						?>
@@ -125,6 +119,8 @@ if (isset($_SESSION['connect'])) {
 						<?php
 
 					}
+					
+									 
 
 					?>
 				

@@ -7,9 +7,10 @@ if (isset($_SESSION['connect'])) {
 	let inscription = document.getElementById('inscription');
 		inscription.addEventListener('click',closeModal);
 		function closeModal() {
-			alert('Vous êtes déja inscit!');
-			 
+			alert('Vous êtes déja inscit!!');
+			$('inscription_form').modal('hide');
 		}
+		
 				
 	</script>
 	<?php
