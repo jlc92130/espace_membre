@@ -84,7 +84,10 @@ if (isset($_SESSION['connect'])) {
 					<div class="text-center">
 						<button type="submit" class="m-3">Se connecter</button>
 					</div>
-					
+					<div>
+						<input type="checkbox" id="souvenir" name="souvenir">
+						<label for="souvenir">Se souvenir de moi</label>
+					</div>
 				</form>
 			
 			</div>	
