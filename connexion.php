@@ -12,9 +12,10 @@ if (isset($_SESSION['connect'])) {
 		</script>
 	
 	<?php
-	
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html>

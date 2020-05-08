@@ -1,6 +1,7 @@
 <?php
  session_start();
  include('connexion_php_verif.php');
+ require('src/cookie.php');
 ?>
 <!DOCTYPE html>
 <html>
