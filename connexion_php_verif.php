@@ -14,34 +14,37 @@ if (!empty($_POST['email_conn']) && !empty($_POST['password_conn'])) {
 		$error_conn_email = "vous devez saisir un email";
 	} 
 	// EMAIL EXIST IN DBB ?
-	$req = $bdd->prepare('SELECT count(*) as x FROM user WHERE email = ?');
-	$req->execute(array($email_conn));
-	$res = $req->fetch();
-	if ($res['x'] == 0 ) {
+	$reqCount = $bdd->prepare('SELECT count(*) as x FROM user WHERE email = ?');
+	$reqCount->execute(array($email_conn));
+	$resCount = $reqCount->fetch();
+	if ($resCount['x'] == 0 ) {
 		$email_unknown =  "Votre email n'existe pas merci de vous <a id='lien_inscrire' data-toggle='modal' data-target='#inscription_form' href='#inscription_form'>inscire</a>" ;
 	
     } 
     else {
-		$req = $bdd->prepare('SELECT password FROM user WHERE email = ?');
+		$req = $bdd->prepare('SELECT password,blocked FROM user WHERE email = ?');
 		$req->execute(array($email_conn));
 		$res = $req->fetch();
 		
 		if ($res['password'] != $password) {
 			$error_conn = "Votre password est erroné";
 			 
-        } 
-        else {
-            $reqSession = $bdd->prepare('SELECT * FROM user WHERE email = ?');
+        } // IF BLOCKED IN DBB IS NOT NULL THEN DON T CONNECT THE USER
+        else if ($res['blocked']==0) {
+            $reqSession = $bdd->prepare('SELECT email FROM user WHERE email = ?');
             $reqSession->execute(array($email_conn));
             $resSession = $reqSession->fetch();
             $_SESSION['connect'] = 1;
             $_SESSION['email'] = $resSession['email'];
-            //CHECKBOX 
+            //IF CHECKBOX IS CHECKED THEN CREATE COOKIE
             if (!empty($_POST['souvenir'])) {
                 setcookie('souvenir',$resSession['secret'],time()+365*24*3600,'/',null,false,true );
             }
 			 			
-		}
+        }
+        else {
+            header('location: ./');
+        }
 						
 	}
 }
