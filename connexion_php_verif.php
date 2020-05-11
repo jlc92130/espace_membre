@@ -31,7 +31,7 @@ if (!empty($_POST['email_conn']) && !empty($_POST['password_conn'])) {
 			 
         } // IF BLOCKED IN DBB IS NOT NULL THEN DON T CONNECT THE USER
         else if ($res['blocked']==0) {
-            $reqSession = $bdd->prepare('SELECT email FROM user WHERE email = ?');
+            $reqSession = $bdd->prepare('SELECT email,secret FROM user WHERE email = ?');
             $reqSession->execute(array($email_conn));
             $resSession = $reqSession->fetch();
             $_SESSION['connect'] = 1;

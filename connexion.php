@@ -40,7 +40,7 @@ if (isset($_SESSION['connect'])) {
 						<script>$('#connexion').modal('show')</script>
 					<?php
 					}
-					/* if (isset($_GET['success'])) {
+					/* GET METHOD if (isset($_GET['success'])) {
 						echo '<div>Vous etes bien connecté</div>';
 						
 					} */
